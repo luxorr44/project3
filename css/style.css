@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 150vh;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(300px, auto) 1fr;
+      grid-template-columns: minmax(300px, auto) 1fr;
+  -ms-grid-rows: minmax(100px auto) minmax(200 auto) 300px 1fr 100px 150px;
+      grid-template-rows: minmax(100px auto) minmax(200 auto) 300px 1fr 100px 150px;
+      grid-template-areas: "logo gallery" "menuu gallery" "search gallery" ". gallery" "contacts gallery" "stopka stopka ";
+}
+
+@media (max-width: 800px) {
+  .grid {
+    -ms-grid-columns: minmax(200px, auto) 1fr minmax(100px, auto);
+        grid-template-columns: minmax(200px, auto) 1fr minmax(100px, auto);
+    -ms-grid-rows: auto auto auto auto;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: "logo search menuu" "gallery gallery gallery" "contacts contacts contacts" "stopka stopka stopka";
+  }
+}
+
+img {
+  width: 100%;
+}
+
+.logo {
+  background-color: red;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logo;
+}
+
+.search {
+  background-color: green;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: search;
+}
+
+.menu {
+  background-color: yellow;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: menuu;
+}
+
+.gallery {
+  background-color: #ff00bf;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 5;
+  -ms-grid-column: 2;
+  grid-area: gallery;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(205px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+  gap: 15px;
+  padding: 120px 15px 15px;
+  position: relative;
+}
+
+.gallery h1 {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.contact {
+  background-color: royalblue;
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: contacts;
+}
+
+.footer {
+  background-color: purple;
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: stopka;
+}
+/*# sourceMappingURL=style.css.map */
